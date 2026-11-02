@@ -1,0 +1,71 @@
+{
+  "_instrucciones": [
+    "Este archivo guarda los terrenos que aparecen en la web. Para agregar uno, copia un bloque { ... } completo, pégalo después del último (separado por una coma) y cambia sus datos.",
+    "Para quitar un terreno, borra su bloque completo (y la coma que lo separaba del anterior).",
+    "Cada texto va en español (es) y en inglés (en). Si un dato no está confirmado, deja \"[POR CONFIRMAR]\" en español y \"[TO BE CONFIRMED]\" en inglés: la web lo marca en amarillo.",
+    "zona: uno de estos valores -> vicuna, paihuano, monte-grande, pisco-elqui, horcon, alcohuaz. Define el filtro de sector y el marcador en la línea del valle.",
+    "zona_confirmada: true si la zona es real; false si es solo de ejemplo.",
+    "superficie_m2: solo el número, sin puntos (ej: 2400). Si no se sabe, escribe null.",
+    "estado (en rio, agua_riego, rol_propio, riesgos, acceso, luz): 'ok' = revisado y bien (verde), 'atencion' = revisado y hay que tenerlo en cuenta (terracota), 'no' = no tiene (gris), 'pendiente' = falta revisar (amarillo).",
+    "foto: nombre base del archivo en la carpeta img, sin tamaño ni extensión (ej: 'terreno-1' usa img/terreno-1-800.webp e img/terreno-1-1600.webp). Si no hay foto, deja \"\"."
+  ],
+  "terrenos": [
+    {
+      "id": "terreno-1",
+      "nombre": { "es": "Terreno 1", "en": "Plot 1" },
+      "zona": "alcohuaz",
+      "zona_confirmada": false,
+      "sector": { "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "superficie_m2": 2400,
+      "precio": { "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "foto": "",
+      "foto_alt": { "es": "[POR CONFIRMAR: descripción de la foto del terreno]", "en": "[TO BE CONFIRMED: description of the plot photo]" },
+      "rio": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "agua_riego": { "estado": "pendiente", "es": "[POR CONFIRMAR: minutos de turno y cada cuántos días]", "en": "[TO BE CONFIRMED: irrigation turn, minutes and how often]" },
+      "rol_propio": { "estado": "ok", "es": "Sí, tiene rol propio", "en": "Yes, it has its own rol (property tax ID)" },
+      "riesgos": { "estado": "pendiente", "es": "Inundación, derrumbe y aluvión: [POR CONFIRMAR]", "en": "Flooding, landslide and mudflow: [TO BE CONFIRMED]" },
+      "acceso": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "luz": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "descripcion": {
+        "es": "Terreno de 2.400 m² con rol propio. [POR CONFIRMAR: descripción breve del terreno, vista, entorno]",
+        "en": "A 2,400 m² plot with its own rol (property tax ID). [TO BE CONFIRMED: short description, views, surroundings]"
+      }
+    },
+    {
+      "id": "terreno-2",
+      "nombre": { "es": "Terreno 2 (ejemplo)", "en": "Plot 2 (sample)" },
+      "zona": "pisco-elqui",
+      "zona_confirmada": false,
+      "sector": { "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "superficie_m2": null,
+      "precio": { "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "foto": "",
+      "foto_alt": { "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "rio": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "agua_riego": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "rol_propio": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "riesgos": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "acceso": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "luz": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "descripcion": { "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" }
+    },
+    {
+      "id": "terreno-3",
+      "nombre": { "es": "Terreno 3 (ejemplo)", "en": "Plot 3 (sample)" },
+      "zona": "paihuano",
+      "zona_confirmada": false,
+      "sector": { "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "superficie_m2": null,
+      "precio": { "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "foto": "",
+      "foto_alt": { "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "rio": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "agua_riego": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "rol_propio": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "riesgos": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "acceso": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "luz": { "estado": "pendiente", "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" },
+      "descripcion": { "es": "[POR CONFIRMAR]", "en": "[TO BE CONFIRMED]" }
+    }
+  ]
+}
