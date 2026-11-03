@@ -8,3 +8,6 @@ FUENTES.md
 _respaldos/
 Foto referencia.jpg
 *.jpg
+
+# La foto de portada sí se publica
+!img/*.jpg
