@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Elqui Terrenos · Terrenos revisados en el Valle del Elqui</title>
-  <meta name="description" content="Terrenos en el Valle del Elqui revisados por alguien que vive en el valle. Antes de recomendarte uno, revisamos el agua de riego, el río, los riesgos, el rol y el acceso.">
+  <meta name="description" content="Gestión en compra y venta de propiedades en la comuna de Paihuano, Valle del Elqui, Chile. Terrenos revisados por alguien que vive en el valle: agua de riego, río, riesgos, rol y acceso.">
   <link rel="canonical" href="https://elquiterrenos.cl/">
   <link rel="alternate" hreflang="es" href="https://elquiterrenos.cl/">
   <link rel="alternate" hreflang="en" href="https://elquiterrenos.cl/en/">
@@ -42,11 +42,12 @@
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "name": "Elqui Terrenos",
+    "alternateName": "Elqui Terrenos Chile",
     "url": "https://elquiterrenos.cl/",
     "description": "Corretaje de terrenos en el Valle del Elqui, Chile. Revisamos agua de riego, río, riesgos, rol propio, acceso y luz antes de recomendar un terreno.",
     "image": "https://elquiterrenos.cl/img/og-elqui-terrenos.jpg",
     "areaServed": [
-      { "@type": "Place", "name": "Valle del Elqui, Región de Coquimbo, Chile" },
+      { "@type": "Place", "name": "Comuna de Paihuano, Valle del Elqui, Región de Coquimbo, Chile" },
       { "@type": "Place", "name": "Vicuña" },
       { "@type": "Place", "name": "Paihuano" },
       { "@type": "Place", "name": "Monte Grande" },
@@ -60,6 +61,7 @@
       "addressRegion": "Región de Coquimbo",
       "addressCountry": "CL"
     },
+    "geo": { "@type": "GeoCoordinates", "latitude": -30.0288, "longitude": -70.5171 },
     "founder": { "@type": "Person", "name": "Guillermo Salfate" },
     "knowsLanguage": ["es", "en"]
   }
@@ -84,6 +86,8 @@
       <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 7l9 6 9-6"/></symbol>
       <symbol id="i-ig" viewBox="0 0 24 24"><path d="M4 8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M9 12a3 3 0 1 0 6 0 3 3 0 0 0-6 0M16.5 7.5v.01"/></symbol>
       <symbol id="i-destello" viewBox="0 0 24 24"><path d="M12 0c.6 6.6 4.4 11 12 12-7.6 1-11.4 5.4-12 12-.6-6.6-4.4-11-12-12C7.6 11 11.4 6.6 12 0z"/></symbol>
+      <symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+      <symbol id="i-monte" viewBox="0 0 24 24"><path d="M3 20 9.5 9l4 6.5L16 12l5 8z"/></symbol>
       <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
       <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
       <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M5 12h14M13 18l6-6M13 6l6 6"/></symbol>
@@ -161,8 +165,8 @@
       <div class="hero__marco" aria-hidden="true"></div>
 
       <div class="hero__arriba">
-        <p>Valle del Elqui<br>Región de Coquimbo</p>
-        <p>Corretaje<br>de terrenos</p>
+        <p>Comuna de Paihuano<br>Valle del Elqui</p>
+        <p>Compra y venta<br>de propiedades</p>
         <p>Desde Alcohuaz<br>Chile</p>
       </div>
 
@@ -173,9 +177,19 @@
           <div class="botones">
             <a class="boton boton--claro" href="#terrenos">Ver terrenos</a>
             <a class="boton boton--borde" href="#vender">Vender mi terreno</a>
-          </div>
+          </div>
+
         </div>
         <ul class="hero__colores" aria-hidden="true"><li></li><li></li><li></li><li></li></ul>
+      </div>
+    </section>
+
+    <!-- ============ PRESENTACIÓN (texto de Guillermo) ============ -->
+    <section class="presenta" aria-labelledby="presenta-titulo">
+      <div class="envoltura">
+        <h2 class="presenta__marca" id="presenta-titulo">Elqui Terrenos Chile</h2>
+        <p class="presenta__texto">Gestión en compra y venta de propiedades en el valle de la comuna de Paihuano, con la mejor paz de la precordillera de los Andes.</p>
+        <a class="presenta__link" href="#ficha">Clima, altura y cómo llegar <svg class="ico" aria-hidden="true"><use href="#i-flecha"/></svg></a>
       </div>
     </section>
 
@@ -235,7 +249,7 @@
         <header class="seccion__cabeza aparecer">
           <p class="sobretitulo">La línea del valle</p>
           <h2 id="valle-titulo">De Vicuña a Alcohuaz, el valle sube</h2>
-          <p class="seccion__bajada">El Valle del Elqui es una línea que va subiendo entre cerros, siguiendo el río. Toca un marcador para ver el terreno que hay en ese tramo.</p>
+          <p class="seccion__bajada">El Valle del Elqui es una línea que va subiendo entre cerros, siguiendo el río. Nuestro foco es la comuna de Paihuano, en la parte alta del valle, y también trabajamos en Vicuña. Toca un marcador para ver el terreno que hay en ese tramo.</p>
         </header>
 
         <div class="valle aparecer">
@@ -249,12 +263,13 @@
             <li class="pueblo" data-zona="vicuna" style="--x:7%;--y:83%">
               <span class="pueblo__punto" aria-hidden="true"></span>
               <span class="pueblo__nombre">Vicuña</span>
-              <span class="pueblo__nota">Entrada del valle</span>
+              <span class="pueblo__nota">Entrada del valle. También trabajamos aquí</span>
               <span class="pueblo__marcas"></span>
             </li>
             <li class="pueblo" data-zona="paihuano" style="--x:24.2%;--y:70.7%">
               <span class="pueblo__punto" aria-hidden="true"></span>
               <span class="pueblo__nombre">Paihuano</span>
+              <span class="pueblo__nota">Comienza la comuna de Paihuano</span>
               <span class="pueblo__marcas"></span>
             </li>
             <li class="pueblo" data-zona="monte-grande" style="--x:41.4%;--y:58%">
@@ -283,6 +298,62 @@
 
         <div class="valle__panel" id="valle-panel" aria-live="polite" hidden></div>
         <p class="nota nota--clara">Las ubicaciones de los terrenos de ejemplo son referenciales <mark class="pc">[POR CONFIRMAR]</mark>.</p>
+
+        <!-- FICHA DEL LUGAR: datos aproximados para compradores de Chile y del extranjero -->
+        <div class="ficha aparecer" id="ficha">
+          <h3>Ficha del lugar</h3>
+          <p class="ficha__bajada">Datos aproximados para ubicarte, vengas de Chile o de otro país.</p>
+
+          <div class="ficha__grilla">
+            <div class="ficha__bloque">
+              <h4><svg class="ico" aria-hidden="true"><use href="#i-sol"/></svg> Clima promedio</h4>
+              <dl>
+                <div><dt>Verano (dic. a mar.)</dt><dd>25 a 30 °C de día<br>12 a 16 °C de noche</dd></div>
+                <div><dt>Invierno (jun. a ago.)</dt><dd>15 a 20 °C de día<br>2 a 7 °C de noche</dd></div>
+                <div><dt>Lluvia</dt><dd>Muy poca: unos 90 a 100 mm al año, casi toda en invierno</dd></div>
+                <div><dt>Cielo</dt><dd>Despejado la mayor parte del año. Por eso el valle tiene observatorios astronómicos</dd></div>
+              </dl>
+              <p class="ficha__nota"><mark class="pc">[POR CONFIRMAR: temperaturas con datos oficiales]</mark></p>
+            </div>
+
+            <div class="ficha__bloque">
+              <h4><svg class="ico" aria-hidden="true"><use href="#i-monte"/></svg> Altura de cada pueblo</h4>
+              <dl>
+                <div><dt>Vicuña</dt><dd>630 m</dd></div>
+                <div><dt>Paihuano</dt><dd>1.060 m</dd></div>
+                <div><dt>Monte Grande</dt><dd>1.100 m</dd></div>
+                <div><dt>Pisco Elqui</dt><dd>1.250 m</dd></div>
+                <div><dt>Horcón</dt><dd>1.400 m</dd></div>
+                <div><dt>Alcohuaz</dt><dd>1.750 m</dd></div>
+              </dl>
+              <p class="ficha__nota">Metros sobre el nivel del mar, aproximados.</p>
+            </div>
+
+            <div class="ficha__bloque">
+              <h4><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Dónde está</h4>
+              <dl>
+                <div><dt>Coordenadas (Paihuano)</dt><dd>30° 01′ S · 70° 31′ O</dd></div>
+                <div><dt>Comuna</dt><dd>Paihuano, Región de Coquimbo</dd></div>
+                <div><dt>Superficie de la comuna</dt><dd>Unos 1.495 km²</dd></div>
+                <div><dt>Alrededores</dt><dd>Cerros de la precordillera de los Andes, el río Elqui y sus canales, viñas y huertos</dd></div>
+              </dl>
+              <a class="boton boton--borde ficha__mapa" href="https://www.google.com/maps/search/?api=1&amp;query=-30.0288,-70.5171" target="_blank" rel="noopener">
+                <svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg> Ver en Google Maps
+              </a>
+            </div>
+
+            <div class="ficha__bloque">
+              <h4><svg class="ico" aria-hidden="true"><use href="#i-acceso"/></svg> Cómo llegar</h4>
+              <dl>
+                <div><dt>Desde Vicuña</dt><dd>Unos 40 km</dd></div>
+                <div><dt>Desde La Serena</dt><dd>Unos 100 km, cerca de 1 h 45 min en auto</dd></div>
+                <div><dt>Aeropuerto más cercano</dt><dd>La Florida, en La Serena</dd></div>
+                <div><dt>Desde Santiago</dt><dd>Unos 570 km en auto, o 1 hora de vuelo a La Serena</dd></div>
+              </dl>
+              <p class="ficha__nota">Distancias aproximadas hasta Pisco Elqui.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -580,7 +651,7 @@
           <li><a href="en/" hreflang="en" lang="en">English</a></li>
         </ul>
       </nav>
-      <p class="pie__legal">© <span id="anio">2026</span> Elqui Terrenos · elquiterrenos.cl<br>La información de los terrenos es referencial. No constituye asesoría legal.</p>
+      <p class="pie__legal">© <span id="anio">2026</span> Elqui Terrenos Chile · elquiterrenos.cl<br>La información de los terrenos es referencial. No constituye asesoría legal.</p>
     </div>
   </footer>
 
