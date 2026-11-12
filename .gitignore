@@ -11,3 +11,6 @@ Foto referencia.jpg
 
 # La foto de portada sí se publica
 !img/*.jpg
+
+# Proyecto del video (interno, no se publica en el sitio)
+video/
