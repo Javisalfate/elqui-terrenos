@@ -91,13 +91,13 @@
   </svg>
 
   <!-- ============ MENÚ ============ -->
-  <header class="cabecera" id="cabecera">
+  <header data-bloque="1" data-bloque-nombre="Barra de arriba" class="cabecera" id="cabecera">
     <div class="cabecera__in">
-      <a class="logo" href="#inicio" aria-label="Elqui Terrenos, ir al inicio">
+      <a data-bloque="1.1" data-bloque-nombre="Logo" class="logo" href="#inicio" aria-label="Elqui Terrenos, ir al inicio">
         <span class="logo__elqui">Elqui</span> <span class="logo__terrenos">Terrenos</span>
       </a>
 
-      <nav class="menu" id="menu" aria-label="Menú principal">
+      <nav data-bloque="1.2" data-bloque-nombre="Menú" class="menu" id="menu" aria-label="Menú principal">
         <ul>
           <li><a href="#terrenos">Terrenos</a></li>
           <li><a href="#valle">El valle</a></li>
@@ -110,7 +110,7 @@
         </ul>
       </nav>
 
-      <div class="idioma" role="group" aria-label="Idioma">
+      <div data-bloque="1.3" data-bloque-nombre="Botón de idioma" class="idioma" role="group" aria-label="Idioma">
         <span class="idioma__actual" aria-current="true">ES</span>
         <a class="idioma__otro" href="en/" hreflang="en" lang="en">EN</a>
       </div>
@@ -125,7 +125,7 @@
   <main id="contenido">
 
     <!-- ============ 1. PORTADA ============ -->
-    <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+    <section data-bloque="2" data-bloque-nombre="Portada" class="hero" id="inicio" aria-labelledby="hero-titulo">
       <div class="hero__media">
         <!--
           PORTADA ESTILO AFICHE (ver "Foto referencia 2.jpg"): foto real del valle
@@ -160,7 +160,7 @@
       <!-- Líneas finas del marco, como en el afiche -->
       <div class="hero__marco" aria-hidden="true"></div>
 
-      <div class="hero__arriba">
+      <div data-bloque="2.1" data-bloque-nombre="Textos chicos de arriba" class="hero__arriba">
         <p>Valle del Elqui<br>Región de Coquimbo</p>
         <p>Corretaje<br>de terrenos</p>
         <p>Desde Alcohuaz<br>Chile</p>
@@ -169,8 +169,8 @@
       <div class="hero__texto">
         <svg class="hero__destello" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-destello"/></svg>
         <div>
-          <h1 id="hero-titulo">Terrenos en el Valle del Elqui, revisados por alguien que vive aquí</h1>
-          <div class="botones">
+          <h1 data-bloque="2.2" data-bloque-nombre="Título principal" id="hero-titulo">Terrenos en el Valle del Elqui, revisados por alguien que vive aquí</h1>
+          <div data-bloque="2.3" data-bloque-nombre="Botones" class="botones">
             <a class="boton boton--claro" href="#terrenos">Ver terrenos</a>
             <a class="boton boton--borde" href="#vender">Vender mi terreno</a>
           </div>
@@ -180,23 +180,23 @@
     </section>
 
     <!-- ============ MANIFIESTO ============ -->
-    <section class="manifiesto" aria-label="Nuestro oficio">
+    <section data-bloque="3" data-bloque-nombre="Frase del oficio" class="manifiesto" aria-label="Nuestro oficio">
       <div class="envoltura">
-        <p class="manifiesto__texto aparecer">Quien vende siempre muestra lo más lindo. Nosotros revisamos <em>lo que no se ve a simple vista</em>: el agua, el río, los riesgos y los papeles.</p>
-        <p class="manifiesto__firma aparecer">Para cuidar a quien compra</p>
+        <p data-bloque="3.1" data-bloque-nombre="Frase" class="manifiesto__texto aparecer">Quien vende siempre muestra lo más lindo. Nosotros revisamos <em>lo que no se ve a simple vista</em>: el agua, el río, los riesgos y los papeles.</p>
+        <p data-bloque="3.2" data-bloque-nombre="Firma" class="manifiesto__firma aparecer">Para cuidar a quien compra</p>
       </div>
     </section>
 
     <!-- ============ 2. TERRENOS DISPONIBLES ============ -->
-    <section class="seccion" id="terrenos" aria-labelledby="terrenos-titulo">
+    <section data-bloque="4" data-bloque-nombre="Terrenos" class="seccion" id="terrenos" aria-labelledby="terrenos-titulo">
       <div class="envoltura">
-        <header class="seccion__cabeza aparecer">
+        <header data-bloque="4.1" data-bloque-nombre="Encabezado" class="seccion__cabeza aparecer">
           <p class="sobretitulo">Terrenos disponibles</p>
           <h2 id="terrenos-titulo">Cada terreno, con su carnet</h2>
           <p class="seccion__bajada">Antes de la foto bonita, lo que importa: río, agua de riego, rol, riesgos, acceso y luz. Si un dato todavía no está revisado, te lo decimos.</p>
         </header>
 
-        <form class="filtros aparecer" id="filtros" aria-label="Filtrar terrenos">
+        <form data-bloque="4.2" data-bloque-nombre="Filtros" class="filtros aparecer" id="filtros" aria-label="Filtrar terrenos">
           <div class="campo campo--filtro">
             <label for="filtro-zona">Sector</label>
             <select id="filtro-zona" name="zona">
@@ -221,24 +221,24 @@
           <p class="filtros__conteo" id="conteo" aria-live="polite"></p>
         </form>
 
-        <div class="carnets" id="lista-terrenos">
+        <div data-bloque="4.3" data-bloque-nombre="Fichas de los terrenos" class="carnets" id="lista-terrenos">
           <p class="cargando">Cargando terrenos…</p>
         </div>
 
-        <p class="nota">La información de cada terreno es referencial y se confirma en la visita y en los documentos.</p>
+        <p data-bloque="4.4" data-bloque-nombre="Nota" class="nota">La información de cada terreno es referencial y se confirma en la visita y en los documentos.</p>
       </div>
     </section>
 
     <!-- ============ 3. LA LÍNEA DEL VALLE ============ -->
-    <section class="seccion seccion--noche" id="valle" aria-labelledby="valle-titulo">
+    <section data-bloque="5" data-bloque-nombre="El valle" class="seccion seccion--noche" id="valle" aria-labelledby="valle-titulo">
       <div class="envoltura">
-        <header class="seccion__cabeza aparecer">
+        <header data-bloque="5.1" data-bloque-nombre="Encabezado" class="seccion__cabeza aparecer">
           <p class="sobretitulo">La línea del valle</p>
           <h2 id="valle-titulo">De Vicuña a Alcohuaz, el valle sube</h2>
           <p class="seccion__bajada">El Valle del Elqui es una línea que va subiendo entre cerros, siguiendo el río. Toca un marcador para ver el terreno que hay en ese tramo.</p>
         </header>
 
-        <div class="valle aparecer">
+        <div data-bloque="5.2" data-bloque-nombre="Línea del valle con los pueblos" class="valle aparecer">
           <svg class="valle__dibujo" viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true">
             <path class="valle__cerros" d="M0 300V230L90 190 170 215 260 150 350 175 440 110 520 135 610 70 700 95 790 40 880 60 1000 20V300z"/>
             <path class="valle__cerros valle__cerros--cerca" d="M0 300V265L120 240 240 255 360 205 480 225 600 170 720 185 840 130 1000 110V300z"/>
@@ -281,21 +281,21 @@
           </ol>
         </div>
 
-        <div class="valle__panel" id="valle-panel" aria-live="polite" hidden></div>
-        <p class="nota nota--clara">Las ubicaciones de los terrenos de ejemplo son referenciales <mark class="pc">[POR CONFIRMAR]</mark>.</p>
+        <div data-bloque="5.3" data-bloque-nombre="Ficha que se abre al tocar un marcador" class="valle__panel" id="valle-panel" aria-live="polite" hidden></div>
+        <p data-bloque="5.4" data-bloque-nombre="Nota" class="nota nota--clara">Las ubicaciones de los terrenos de ejemplo son referenciales <mark class="pc">[POR CONFIRMAR]</mark>.</p>
       </div>
     </section>
 
     <!-- ============ 4. LO QUE REVISAMOS ============ -->
-    <section class="seccion seccion--topo" id="revisamos" aria-labelledby="revisamos-titulo">
+    <section data-bloque="6" data-bloque-nombre="Lo que revisamos" class="seccion seccion--topo" id="revisamos" aria-labelledby="revisamos-titulo">
       <div class="envoltura">
-        <header class="seccion__cabeza aparecer">
+        <header data-bloque="6.1" data-bloque-nombre="Encabezado" class="seccion__cabeza aparecer">
           <p class="sobretitulo">Lo que no se ve a simple vista</p>
           <h2 id="revisamos-titulo">Lo que revisamos antes de recomendarte un terreno</h2>
           <p class="seccion__bajada">Son las preguntas que más nos hacen y las que más problemas evitan. Las revisamos en terreno, con calma, como lo haríamos si fuera para nosotros.</p>
         </header>
 
-        <ol class="chequeo">
+        <ol data-bloque="6.2" data-bloque-nombre="Los 5 puntos que revisamos" class="chequeo">
           <li class="chequeo__item aparecer">
             <span class="chequeo__num" aria-hidden="true">1</span>
             <svg class="ico chequeo__ico ico--rio" aria-hidden="true"><use href="#i-agua"/></svg>
@@ -328,14 +328,14 @@
           </li>
         </ol>
 
-        <p class="aviso aparecer">Revisamos y te contamos con honestidad lo que vemos, pero no es asesoría legal. Antes de firmar, recomendamos que un abogado haga el estudio de títulos del terreno. Si además hacen falta estudios técnicos, te lo decimos.</p>
+        <p data-bloque="6.3" data-bloque-nombre="Aviso" class="aviso aparecer">Revisamos y te contamos con honestidad lo que vemos, pero no es asesoría legal. Antes de firmar, recomendamos que un abogado haga el estudio de títulos del terreno. Si además hacen falta estudios técnicos, te lo decimos.</p>
       </div>
     </section>
 
     <!-- ============ 5. QUIÉN TE ACOMPAÑA ============ -->
-    <section class="seccion" id="guillermo" aria-labelledby="guillermo-titulo">
+    <section data-bloque="7" data-bloque-nombre="Guillermo" class="seccion" id="guillermo" aria-labelledby="guillermo-titulo">
       <div class="envoltura persona">
-        <div class="persona__foto aparecer">
+        <div data-bloque="7.1" data-bloque-nombre="Foto" class="persona__foto aparecer">
           <!-- FOTO PENDIENTE: retrato de Guillermo. Reemplazar este bloque por <picture> con loading="lazy". -->
           <div class="foto-pendiente foto-pendiente--retrato" role="img" aria-label="Espacio para la foto de Guillermo Salfate">
             <svg class="ico" aria-hidden="true"><use href="#i-foto"/></svg>
@@ -345,12 +345,12 @@
         </div>
         <div class="persona__texto aparecer">
           <p class="sobretitulo">Quién te acompaña</p>
-          <h2 id="guillermo-titulo">Guillermo Salfate</h2>
-          <p class="persona__lead">Oficio de corredor y vida en el valle.</p>
-          <p>Guillermo se formó en corretaje y gestión inmobiliaria en 1998 y trabajó <mark class="pc">[POR CONFIRMAR: cuántos años]</mark> como corredor de propiedades en <mark class="pc">[POR CONFIRMAR: zona]</mark>.</p>
-          <p>Hoy vive y trabaja en Alcohuaz, el último pueblo del Valle del Elqui. Conoce los caminos, los canales y a la gente del valle. Sabe a quién preguntar cuando algo no está claro.</p>
-          <p>Sabe que quien vende muestra lo más lindo. Por eso su trabajo es mirar lo otro: lo que no aparece en la foto y que, si no se revisa, le puede costar caro a quien compra.</p>
-          <a class="boton boton--noche" href="#contacto" data-wa="Hola Guillermo, quiero conversar sobre un terreno en el Valle del Elqui.">
+          <h2 data-bloque="7.2" data-bloque-nombre="Nombre" id="guillermo-titulo">Guillermo Salfate</h2>
+          <p data-bloque="7.3" data-bloque-nombre="Frase bajo el nombre" class="persona__lead">Oficio de corredor y vida en el valle.</p>
+          <p data-bloque="7.4" data-bloque-nombre="Párrafo 1">Guillermo se formó en corretaje y gestión inmobiliaria en 1998 y trabajó <mark class="pc">[POR CONFIRMAR: cuántos años]</mark> como corredor de propiedades en <mark class="pc">[POR CONFIRMAR: zona]</mark>.</p>
+          <p data-bloque="7.5" data-bloque-nombre="Párrafo 2">Hoy vive y trabaja en Alcohuaz, el último pueblo del Valle del Elqui. Conoce los caminos, los canales y a la gente del valle. Sabe a quién preguntar cuando algo no está claro.</p>
+          <p data-bloque="7.6" data-bloque-nombre="Párrafo 3">Sabe que quien vende muestra lo más lindo. Por eso su trabajo es mirar lo otro: lo que no aparece en la foto y que, si no se revisa, le puede costar caro a quien compra.</p>
+          <a data-bloque="7.7" data-bloque-nombre="Botón" class="boton boton--noche" href="#contacto" data-wa="Hola Guillermo, quiero conversar sobre un terreno en el Valle del Elqui.">
             <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Conversar con Guillermo
           </a>
         </div>
@@ -358,13 +358,13 @@
     </section>
 
     <!-- ============ 6. CÓMO COMPRAR ============ -->
-    <section class="seccion seccion--arena" id="como-comprar" aria-labelledby="pasos-titulo">
+    <section data-bloque="8" data-bloque-nombre="Cómo comprar" class="seccion seccion--arena" id="como-comprar" aria-labelledby="pasos-titulo">
       <div class="envoltura">
-        <header class="seccion__cabeza aparecer">
+        <header data-bloque="8.1" data-bloque-nombre="Encabezado" class="seccion__cabeza aparecer">
           <p class="sobretitulo">Paso a paso</p>
           <h2 id="pasos-titulo">Cómo comprar con nosotros</h2>
         </header>
-        <ol class="pasos">
+        <ol data-bloque="8.2" data-bloque-nombre="Los 5 pasos" class="pasos">
           <li class="paso aparecer">
             <span class="paso__num">1</span>
             <h3>Conversamos lo que buscas</h3>
@@ -395,19 +395,19 @@
     </section>
 
     <!-- ============ 7. VENDER ============ -->
-    <section class="seccion seccion--noche" id="vender" aria-labelledby="vender-titulo">
+    <section data-bloque="9" data-bloque-nombre="Vender tu terreno" class="seccion seccion--noche" id="vender" aria-labelledby="vender-titulo">
       <div class="envoltura vender">
-        <div class="vender__texto aparecer">
+        <div data-bloque="9.1" data-bloque-nombre="Texto" class="vender__texto aparecer">
           <p class="sobretitulo">Para propietarios</p>
           <h2 id="vender-titulo">¿Tienes un terreno para vender?</h2>
           <p>Lo publicamos, lo mostramos y respondemos las preguntas de los compradores con datos claros. Así llegan personas que ya saben lo que están viendo.</p>
           <p>Cuéntanos lo básico y te llamamos para conversar. Sin compromiso.</p>
-          <a class="boton boton--borde" href="#contacto" data-wa="Hola, tengo un terreno en el Valle del Elqui y quiero venderlo.">
+          <a data-bloque="9.2" data-bloque-nombre="Botón de WhatsApp" class="boton boton--borde" href="#contacto" data-wa="Hola, tengo un terreno en el Valle del Elqui y quiero venderlo.">
             <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Prefiero escribir por WhatsApp
           </a>
         </div>
 
-        <form class="formulario aparecer" id="form-vender" novalidate>
+        <form data-bloque="9.3" data-bloque-nombre="Formulario" class="formulario aparecer" id="form-vender" novalidate>
           <div class="campo">
             <label for="f-nombre">Nombre</label>
             <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
@@ -460,21 +460,21 @@
           <button class="boton boton--claro" type="submit">
             <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Enviar por WhatsApp
           </button>
-          <p class="formulario__nota">Se abrirá WhatsApp con tus datos ya escritos, para que los revises antes de enviarlos. <mark class="pc">[POR CONFIRMAR: si también se quiere recibir por correo]</mark></p>
+          <p data-bloque="9.4" data-bloque-nombre="Nota del formulario" class="formulario__nota">Se abrirá WhatsApp con tus datos ya escritos, para que los revises antes de enviarlos. <mark class="pc">[POR CONFIRMAR: si también se quiere recibir por correo]</mark></p>
         </form>
       </div>
     </section>
 
     <!-- ============ 8. PREGUNTAS FRECUENTES ============ -->
-    <section class="seccion" id="preguntas" aria-labelledby="preguntas-titulo">
+    <section data-bloque="10" data-bloque-nombre="Preguntas frecuentes" class="seccion" id="preguntas" aria-labelledby="preguntas-titulo">
       <div class="envoltura envoltura--angosta">
-        <header class="seccion__cabeza aparecer">
+        <header data-bloque="10.1" data-bloque-nombre="Encabezado" class="seccion__cabeza aparecer">
           <p class="sobretitulo">Preguntas frecuentes</p>
           <h2 id="preguntas-titulo">Si es tu primer terreno en el valle</h2>
         </header>
 
         <div class="faq aparecer">
-          <details>
+          <details data-bloque="10.2" data-bloque-nombre="Pregunta 1">
             <summary>¿Qué significa que un terreno "tenga acción de agua"? ¿Es suficiente?</summary>
             <div class="faq__resp">
               <p>En el Valle del Elqui, el agua de riego llega por canales, y el derecho a usarla se mide en acciones. Dentro de cada canal, el agua se reparte por turnos: a cada terreno le toca regar un tiempo (minutos u horas) cada cierta cantidad de días.</p>
@@ -487,7 +487,7 @@
               <p>Además, la cantidad de agua cambia según el año. En sequía, la Junta de Vigilancia del Río Elqui entrega menos agua a los canales: en 2021, los canales de Paihuano recibían alrededor del 25 % de lo habitual.</p>
             </div>
           </details>
-          <details>
+          <details data-bloque="10.3" data-bloque-nombre="Pregunta 2">
             <summary>¿Puedo comprar un terreno de menos de 5.000 m²?</summary>
             <div class="faq__resp">
               <p>Depende de si ese terreno ya existe legalmente como propiedad independiente. Fuera del límite urbano de los pueblos, la ley (Decreto Ley 3.516) solo permite dividir los predios rurales en lotes de al menos 5.000 m², con certificación del SAG e inscripción en el Conservador de Bienes Raíces.</p>
@@ -495,14 +495,14 @@
               <p>Por eso, en cada terreno te decimos si tiene rol propio. Para confirmar su situación legal, lo indicado es un estudio de títulos hecho por un abogado.</p>
             </div>
           </details>
-          <details>
+          <details data-bloque="10.4" data-bloque-nombre="Pregunta 3">
             <summary>¿Cómo sé si un terreno tiene riesgo de aluvión o inundación?</summary>
             <div class="faq__resp">
               <p>Hay señales que se ven en terreno: si está junto a una quebrada, muy cerca del cauce del río o al pie de un cerro. También ayuda preguntar a los vecinos qué ha pasado en lluvias de otros años. Eso lo revisamos en la visita y te contamos lo que vemos.</p>
               <p>Además, puedes pedir información en la Dirección de Obras de la municipalidad (Paihuano o Vicuña, según dónde esté el terreno). Los planes reguladores pueden definir áreas de riesgo por aluviones, rodados o inundaciones, donde la construcción está restringida. Si el terreno lo amerita, te recomendaremos pedir la opinión de un especialista.</p>
             </div>
           </details>
-          <details>
+          <details data-bloque="10.5" data-bloque-nombre="Pregunta 4">
             <summary>¿Puedo comprar desde el extranjero o desde otra región?</summary>
             <div class="faq__resp">
               <p>Sí. Mucha gente que compra en el valle vive en Santiago, en otra región o fuera de Chile. Podemos avanzar a distancia con fotos, videos y videollamadas desde el terreno <mark class="pc">[POR CONFIRMAR]</mark>, y coordinar una visita cuando puedas venir.</p>
@@ -510,14 +510,14 @@
               <p><strong>Si eres de Argentina, Bolivia o Perú:</strong> la comuna de Paihuano (donde están Monte Grande, Pisco Elqui, Horcón y Alcohuaz) y parte de la comuna de Vicuña son zona fronteriza <mark class="pc">[POR CONFIRMAR: verificar con DIFROL]</mark>. La ley (Decreto Ley 1.939) no permite que personas de países limítrofes compren terrenos en zona fronteriza, salvo con una autorización especial por decreto del Presidente de la República. Consúltalo con un abogado antes de avanzar.</p>
             </div>
           </details>
-          <details>
+          <details data-bloque="10.6" data-bloque-nombre="Pregunta 5">
             <summary>¿Quién paga la comisión y cuánto es?</summary>
             <div class="faq__resp">
               <p><mark class="pc">[POR CONFIRMAR: porcentaje de comisión y quién la paga: comprador, vendedor o ambos]</mark></p>
               <p>En Chile la comisión del corredor no está fijada por ley: se acuerda entre las partes. Nosotros la conversamos y la dejamos por escrito antes de empezar, para que no haya sorpresas.</p>
             </div>
           </details>
-          <details>
+          <details data-bloque="10.7" data-bloque-nombre="Pregunta 6">
             <summary>¿Puedo visitar el terreno antes de decidir?</summary>
             <div class="faq__resp">
               <p>Sí, y te lo recomendamos. Ningún terreno se debería comprar sin haberlo recorrido. Coordinamos la visita y te acompañamos <mark class="pc">[POR CONFIRMAR: días disponibles y si la visita tiene algún costo]</mark>.</p>
@@ -528,14 +528,14 @@
     </section>
 
     <!-- ============ 9. CONTACTO ============ -->
-    <section class="seccion seccion--arena seccion--topo" id="contacto" aria-labelledby="contacto-titulo">
+    <section data-bloque="11" data-bloque-nombre="Contacto" class="seccion seccion--arena seccion--topo" id="contacto" aria-labelledby="contacto-titulo">
       <div class="envoltura envoltura--angosta contacto">
-        <header class="seccion__cabeza aparecer">
+        <header data-bloque="11.1" data-bloque-nombre="Encabezado" class="seccion__cabeza aparecer">
           <p class="sobretitulo">Contacto</p>
           <h2 id="contacto-titulo">Conversemos con calma</h2>
           <p class="seccion__bajada">Escríbenos por WhatsApp o por correo. Te respondemos nosotros, no un bot.</p>
         </header>
-        <ul class="contacto__lista aparecer">
+        <ul data-bloque="11.2" data-bloque-nombre="Datos de contacto" class="contacto__lista aparecer">
           <li>
             <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>
             <div><strong>WhatsApp</strong><br><a href="#" data-wa="Hola, quiero saber más sobre los terrenos de Elqui Terrenos."><mark class="pc">[POR CONFIRMAR]</mark></a></div>
@@ -557,21 +557,21 @@
     </section>
   </main>
 
-  <footer class="pie">
+  <footer data-bloque="12" data-bloque-nombre="Pie de página" class="pie">
     <div class="envoltura pie__in">
-      <div class="pie__col pie__izq">
+      <div data-bloque="12.1" data-bloque-nombre="Desde" class="pie__col pie__izq">
         <p class="pie__rotulo">Desde</p>
         <p>Alcohuaz, Valle del Elqui</p>
       </div>
-      <div class="pie__col pie__centro">
+      <div data-bloque="12.2" data-bloque-nombre="Logo y frase" class="pie__col pie__centro">
         <p class="logo logo--pie"><span class="logo__elqui">Elqui</span> <span class="logo__terrenos">Terrenos</span></p>
         <p class="pie__frase">Terrenos en el Valle del Elqui, revisados por alguien que vive aquí.</p>
       </div>
-      <div class="pie__col pie__der">
+      <div data-bloque="12.3" data-bloque-nombre="Conversemos" class="pie__col pie__der">
         <p class="pie__rotulo">Conversemos</p>
         <p><a href="#contacto" data-wa="Hola, quiero saber más sobre los terrenos de Elqui Terrenos.">WhatsApp</a> · <a href="#contacto">Contacto</a></p>
       </div>
-      <nav aria-label="Enlaces del pie">
+      <nav data-bloque="12.4" data-bloque-nombre="Enlaces" aria-label="Enlaces del pie">
         <ul class="pie__links">
           <li><a href="#terrenos">Terrenos</a></li>
           <li><a href="#revisamos">Lo que revisamos</a></li>
@@ -580,11 +580,11 @@
           <li><a href="en/" hreflang="en" lang="en">English</a></li>
         </ul>
       </nav>
-      <p class="pie__legal">© <span id="anio">2026</span> Elqui Terrenos · elquiterrenos.cl<br>La información de los terrenos es referencial. No constituye asesoría legal.</p>
+      <p data-bloque="12.5" data-bloque-nombre="Texto legal" class="pie__legal">© <span id="anio">2026</span> Elqui Terrenos · elquiterrenos.cl<br>La información de los terrenos es referencial. No constituye asesoría legal.</p>
     </div>
   </footer>
 
-  <a class="wa-flotante" href="#contacto" data-wa="Hola, quiero saber más sobre los terrenos en el Valle del Elqui." aria-label="Escribir por WhatsApp">
+  <a data-bloque="13" data-bloque-nombre="Botón de WhatsApp" class="wa-flotante" href="#contacto" data-wa="Hola, quiero saber más sobre los terrenos en el Valle del Elqui." aria-label="Escribir por WhatsApp">
     <svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg>
     <span class="wa-flotante__texto">WhatsApp</span>
   </a>

@@ -361,8 +361,147 @@ function activarFlotante() {
   new IntersectionObserver(([e]) => boton.classList.toggle("visible", !e.isIntersecting), { threshold: 0.15 }).observe(hero);
 }
 
+/* ---------- Bloques numerados (solo para revisar la maqueta) ----------
+   Se encienden abriendo la página con ?bloques al final del enlace
+   (ej: .../elqui-terrenos/?bloques) y se apagan con ?bloques=no o con
+   el botón "Ocultar números". Los números están escritos en el HTML,
+   en los atributos data-bloque y data-bloque-nombre.
+   REGLA: un número nunca se cambia ni se reutiliza. Un bloque nuevo
+   recibe el siguiente número libre, aunque quede en otro orden.
+   Al pasar el sitio a elquiterrenos.cl se puede borrar esta función. */
+function modoBloquesEncendido() {
+  let encendido = false;
+  try { encendido = sessionStorage.getItem("ver-bloques") === "1"; } catch (e) {}
+  const p = new URLSearchParams(location.search);
+  if (p.has("bloques")) {
+    encendido = !/^(0|no|false|off)$/i.test(p.get("bloques"));
+    try { sessionStorage.setItem("ver-bloques", encendido ? "1" : "0"); } catch (e) {}
+  }
+  return encendido;
+}
+
+function activarBloques() {
+  if (!modoBloquesEncendido()) return;
+  document.documentElement.classList.add("ver-bloques");
+
+  // Capa fija donde van las etiquetas: no toca el diseño de la página
+  const capa = document.createElement("div");
+  capa.className = "bloques-capa";
+  capa.setAttribute("aria-hidden", "true");
+  document.body.appendChild(capa);
+
+  const etiquetas = new Map();
+  const cabecera = $(".cabecera");
+  const esPrincipal = el => !el.dataset.bloque.includes(".");
+
+  function ubicar() {
+    const altoCabecera = cabecera ? cabecera.getBoundingClientRect().bottom : 0;
+    const ancho = document.documentElement.clientWidth;
+    const elementos = $$("[data-bloque]");
+
+    etiquetas.forEach((et, el) => { if (!elementos.includes(el)) { et.remove(); etiquetas.delete(el); } });
+
+    elementos.forEach(el => {
+      let et = etiquetas.get(el);
+      if (!et) {
+        et = document.createElement("span");
+        const principal = esPrincipal(el);
+        et.className = "bloque-etiqueta" + (principal ? " bloque-etiqueta--principal" : "");
+        et.textContent = !principal ? el.dataset.bloque
+          : el.matches(".wa-flotante") ? `${el.dataset.bloque} · WhatsApp`  // corta, para que quepa en celular
+          : `${el.dataset.bloque} · ${el.dataset.bloqueNombre}`;
+        capa.appendChild(et);
+        etiquetas.set(el, et);
+      }
+      const r = el.getBoundingClientRect();
+      const invisible = r.width === 0 || r.height === 0 || getComputedStyle(el).opacity < 0.1;
+      if (invisible || r.bottom < 0 || r.top > innerHeight) { et.hidden = true; return; }
+
+      let x, y;
+      if (esPrincipal(el)) {
+        // Arriba a la derecha del bloque; mientras se recorre el bloque,
+        // la etiqueta acompaña bajo la barra de arriba
+        // Todas en una columna a la derecha: primero el 1 (colgando bajo la
+        // barra de arriba) y debajo el bloque que se está recorriendo
+        const w = et.offsetWidth || 120, h = et.offsetHeight || 28;
+        x = Math.min(r.right, ancho) - w - 12;
+        if (el === cabecera) {
+          y = r.bottom + 4;
+        } else if (el.matches(".wa-flotante")) {
+          x = r.left - w - 8;                 // a la izquierda del botón
+          y = r.top + (r.height - h) / 2;
+        } else {
+          const debajoDelUno = altoCabecera + 4 + h + 6;
+          y = Math.min(Math.max(r.top + 10, debajoDelUno), r.bottom - h - 6);
+          if (y < debajoDelUno - 2) { et.hidden = true; return; }  // el bloque ya casi salió
+        }
+      } else {
+        // En la esquina de arriba a la izquierda del elemento
+        x = Math.max(4, r.left - 6);
+        y = r.top - 11;
+        const dentroDeCabecera = cabecera && cabecera.contains(el);
+        if (!dentroDeCabecera) {
+          if (r.top < altoCabecera) { et.hidden = true; return; }  // ya pasó bajo la barra
+          y = Math.max(y, altoCabecera + 2);
+        }
+      }
+      et.hidden = false;
+      et.style.transform = `translate(${Math.round(x)}px, ${Math.round(y)}px)`;
+    });
+  }
+
+  let pendiente = false;
+  const pedir = () => { if (!pendiente) { pendiente = true; requestAnimationFrame(() => { pendiente = false; ubicar(); }); } };
+  addEventListener("scroll", pedir, { passive: true });
+  addEventListener("resize", pedir);
+  addEventListener("load", pedir);
+  document.addEventListener("transitionend", pedir, true);  // ej: el botón de WhatsApp aparece con fundido
+  if ("ResizeObserver" in window) new ResizeObserver(pedir).observe(document.body);
+  new MutationObserver(pedir).observe($("main") || document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["hidden", "open", "class"] });
+  pedir();
+
+  // Mapa de bloques: botón abajo a la izquierda con la lista completa
+  const mapa = document.createElement("div");
+  mapa.className = "bloques-mapa";
+  const lista = $$("[data-bloque]").map(el => {
+    const principal = esPrincipal(el);
+    return `<li class="${principal ? "bloques-mapa__principal" : ""}"><button type="button" data-ir="${escapar(el.dataset.bloque)}"><b>${escapar(el.dataset.bloque)}</b> ${escapar(el.dataset.bloqueNombre)}</button></li>`;
+  }).join("");
+  mapa.innerHTML = `
+    <div class="bloques-mapa__panel" id="bloques-panel" hidden>
+      <p class="bloques-mapa__titulo">Mapa de bloques</p>
+      <ul>${lista}</ul>
+      <button type="button" class="bloques-mapa__ocultar">Ocultar números</button>
+    </div>
+    <button type="button" class="bloques-mapa__boton" aria-expanded="false" aria-controls="bloques-panel">Bloques</button>`;
+  document.body.appendChild(mapa);
+
+  const boton = $(".bloques-mapa__boton", mapa);
+  const panel = $(".bloques-mapa__panel", mapa);
+  const abrir = abierto => { panel.hidden = !abierto; boton.setAttribute("aria-expanded", String(abierto)); };
+  boton.addEventListener("click", () => abrir(panel.hidden));
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !panel.hidden) { abrir(false); boton.focus(); } });
+  panel.addEventListener("click", e => {
+    const ir = e.target.closest("[data-ir]");
+    if (ir) {
+      const destino = $(`[data-bloque="${CSS.escape(ir.dataset.ir)}"]`);
+      if (destino) {
+        const d = destino.matches("details") ? destino : destino.closest("details");
+        if (d) d.open = true;
+        destino.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      if (matchMedia("(max-width: 700px)").matches) abrir(false);
+    }
+    if (e.target.closest(".bloques-mapa__ocultar")) {
+      try { sessionStorage.setItem("ver-bloques", "0"); } catch (err) {}
+      location.replace(location.pathname + location.hash);
+    }
+  });
+}
+
 /* ---------- Inicio ---------- */
 document.documentElement.classList.add("js");
+activarBloques();
 activarEnlacesWhatsApp();
 activarMenu();
 activarFlotante();
